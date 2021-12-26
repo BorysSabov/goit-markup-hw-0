@@ -258,6 +258,7 @@ body {
   padding: 8px;
   background-color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
 }
 .modal-button {
   cursor: pointer;
@@ -269,6 +270,7 @@ body {
   align-items: center;
   background-color: var(--primary-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+
   position: absolute;
   right: 8px;
   top: 8px;
@@ -280,7 +282,198 @@ body {
   justify-content: center;
   align-items: center;
   fill: rgb(0, 0, 0);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-button:hover .close-icon {
+  fill: var(--accent-bg-color);
+}
+
+/*//////////////////// Элементы форм оформление ///////////////////////////////*/
+/*  
+Решить с 
+-бордерами
+-фокус при наведении на коммент
+-чекбокс сделать 
+-оформить форму в футере
+-поставить анимацию и тени
+*/
+.form {
+  width: 528px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+}
+.form-item {
+  margin-bottom: 10px;
+}
+.form-comnt {
+  margin-bottom: 20px;
+}
+.form-checkbox {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal-title {
+  display: block;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.form-field {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+.form-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+}
+.form-input {
+  width: 448px;
+  height: 44px;
+  border-radius: 4px;
+  outline: 1px solid rgba(117, 117, 117, 0.5);
+  border-width: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  position: relative;
+  transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon {
+  fill: var(--accent-text-color);
+}
+.form-input:hover,
+.form-input:focus {
+  outline-color: var(--accent-bg-color);
+}
+.form-comment {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  border-radius: 4px;
+  border-width: 0;
+  outline: 1px solid rgba(117, 117, 117, 0.5);
+  transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-comment:hover {
+  outline-color: var(--accent-bg-color);
+}
+.form-comment:focus {
+  outline-color: var(--accent-bg-color);
+}
+.form-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--primery-text-color);
+}
+
+.form-icon {
+  display: flex;
+  position: absolute;
+  top: 33px;
+  left: 15px;
+  fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-field {
+  width: 425px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+  margin-left: 13px;
+}
+.check-input {
+  position: absolute;
+}
+.checkbox-icon {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  top: auto;
+  left: 10px;
+  background-image: url(/img/SVG/checkbox-no.svg);
+  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-text {
+  padding-left: 20px;
+}
+
+.check-input:checked:focus + .checkbox-icon {
+  background-image: url(/img/SVG/checkbox-yes.svg);
+}
+
+/* .checkbox-icon-no {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  top: 1px;
+  left: 20px;
+  fill: #212121;
+}
+
+.checkbox-icon-yes {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  top: 1px;
+  left: 20px;
+} */
+
+.modal-link {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--accent-bg-color);
+}
+.submit-button {
+  padding: 10px 55px;
+  margin: auto;
+  min-width: 200px;
+  border-width: 0;
+  border-radius: 4px;
+  border-color: var(--accent-text-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: var(--button-primery-bcg-color);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* //////////////////////Элементы форм оформление конец///////////////////// */
 
 /* /////////////Конец модального окна////////////// */
 
@@ -694,16 +887,79 @@ body {
   background-color: var(--accent-bg-color);
 }
 
-/*//////////////////// Кнопки button ////////////////////////*/
+.footer-form {
+  display: flex;
+  align-items: center;
+}
+.footer-submit {
+  width: 570px;
+  height: 86px;
+  margin-left: 93px;
+}
+.footer-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding: 15px 16px;
+  color: var(--primary-background-color);
+  background-color: var(--secondary-bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0, 15);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0, 6);
+}
+.form-input:hover {
+  border-color: var(--accent-bg-color);
+}
+.submit-text {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-background-color);
+}
+.footer-button {
+  display: block;
+  margin: auto;
+  min-width: 200px;
+  min-height: 50px;
+  padding: 10px 29px;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: 0 4px 4px 0 #00000015;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: var(--button-primery-bcg-color);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.send-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+/*/ /////////////////// Кнопки button ////////////////////////*/
 .button {
   display: block;
   margin: auto;
   min-width: 200px;
   padding: 10px 32px;
   border-radius: 4px;
-
+  border-width: 0;
   box-shadow: 0 4px 4px 0 #00000015;
-
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
