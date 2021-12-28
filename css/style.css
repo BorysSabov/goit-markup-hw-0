@@ -443,7 +443,7 @@ body {
 }
 
 .check-input:checked + .checkbox-icon {
-  background-image: url(/img/SVG/yes-icon.svg);
+  background-image: url(../img/SVG/yes-icon.svg);
   background-color: var(--accent-bg-color);
   border-color: var(--accent-bg-color);
 }
